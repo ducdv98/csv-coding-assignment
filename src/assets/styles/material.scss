@@ -1,0 +1,19 @@
+@use "@angular/material" as mat;
+@import "@angular/material/theming";
+@import "@angular/cdk/overlay-prebuilt.css";
+
+.custom-assignee-select {
+  .mat-select {
+    .mat-select-min-line {
+      @apply text-sm;
+    }
+  }
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: unset;
+}
+
+.mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
+  @apply bg-primary;
+}

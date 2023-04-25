@@ -1,0 +1,41 @@
+<h1 class="font-bold text-2xl p-4">Task details</h1>
+
+<div class="task-details-container">
+  <form [formGroup]="taskDetailsForm" (ngSubmit)="updateTask()">
+    <div class="text-right mt-3">
+      <button
+        type="submit"
+        class="btn-submit"
+        [disabled]="taskDetailsForm.invalid"
+      >
+        Update
+      </button>
+    </div>
+    <div class="form-control">
+      <label>Task description</label>
+      <textarea
+        formControlName="description"
+        rows="8"
+        placeholder="ie. Clean the house"
+      ></textarea>
+    </div>
+
+    <div class="form-control">
+      <label>Assignee</label>
+      <div class="custom-assignee-select">
+        <mat-select placeholder="None" formControlName="assigneeId">
+          <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+            {{ user.name }}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Date created</label>
+      <input formControlName="createdDate" readonly />
+    </div>
+  </form>
+</div>
+
+<app-loading [loading]="loading$ | async"></app-loading>

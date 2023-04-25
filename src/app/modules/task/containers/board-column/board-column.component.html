@@ -1,0 +1,30 @@
+<div
+  class="board-column"
+  cdkDropList
+  [id]="column.id.toString()"
+  [cdkDropListData]="(tasks$ | async) || []"
+  (cdkDropListDropped)="onTaskDropped($event)"
+>
+  <div class="board-column-header">
+    <div class="board-column-header-name">
+      <span>{{ column?.name }}</span>
+      <span *ngIf="tasks$ | async as tasks">
+        {{
+          tasks.length > 1 ? tasks.length + " issues" : tasks.length + " issue"
+        }}
+      </span>
+    </div>
+  </div>
+
+  <div class="board-column-content">
+    <app-task-item
+      *ngFor="let task of tasks$ | async"
+      cdkDrag
+      [cdkDragData]="task.id"
+      [task]="task"
+      (goToDetails)="onGoToTaskDetails($event)"
+    >
+      <div class="custom-placeholder" *cdkDragPlaceholder></div>
+    </app-task-item>
+  </div>
+</div>

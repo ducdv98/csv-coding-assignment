@@ -1,0 +1,14 @@
+<div class="flex flex-col w-full h-full relative">
+  <app-task-action
+    (newTask)="openNewTaskDialog()"
+    (updateTaskFilters)="updateTaskFilters($event)"
+  >
+  </app-task-action>
+
+  <div class="board" cdkDropListGroup>
+    <app-board-column *ngFor="let col of columns$ | async" [column]="col">
+    </app-board-column>
+  </div>
+
+  <app-loading [loading]="loading$ | async"></app-loading>
+</div>

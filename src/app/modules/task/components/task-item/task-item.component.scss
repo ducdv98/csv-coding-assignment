@@ -1,0 +1,35 @@
+.task-item {
+  @apply rounded w-full block transition-colors bg-white p-3 shadow hover:bg-backgroundLightest cursor-pointer outline-none text-sm;
+
+  .board-card-name {
+    @apply text-left mb-2 text-sm;
+  }
+
+  .label {
+    @apply bg-backgroundGray text-textDark text-xs border-none px-1 py-0.5 rounded;
+  }
+
+  .footer {
+    @apply flex justify-between items-center;
+
+    .created-date {
+      @apply flex items-center text-xs gap-2;
+
+      .mat-icon {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .assignee {
+      @apply flex items-center text-xs gap-2;
+
+      .mat-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+}

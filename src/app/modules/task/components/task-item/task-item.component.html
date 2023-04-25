@@ -1,0 +1,19 @@
+<button
+  class="task-item"
+  [ngClass]="{ 'opacity-50': loading }"
+  (click)="ontTaskClick()"
+>
+  <div class="flex flex-row justify-between">
+    <div class="board-card-name">{{ task.description }}</div>
+  </div>
+  <div class="footer">
+    <label class="created-date">
+      <mat-icon>calendar_today</mat-icon>
+      {{ task.createdDate | date }}
+    </label>
+    <div class="assignee">
+      <mat-icon>account_circle_outline</mat-icon>
+      {{ (assignee$ | async)?.name }}
+    </div>
+  </div>
+</button>

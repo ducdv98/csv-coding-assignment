@@ -1,0 +1,23 @@
+.action-container {
+  @apply px-10 my-7 w-full h-10 flex flex-row items-center justify-between;
+
+  .form-control {
+    @apply w-96 relative rounded-md shadow-sm;
+
+    .input {
+      @apply block w-full pl-2 pr-10 sm:text-sm border-gray-300 border rounded py-2 bg-gray-50 focus:border-blue-550 focus:outline-none;
+    }
+  }
+
+  .btn-new {
+    @apply text-sm bg-primary text-white text-sm py-2 px-3 rounded-sm font-normal;
+  }
+
+  .custom-assignee-select {
+    @apply w-48;
+
+    .input {
+      @apply px-2 z-10;
+    }
+  }
+}

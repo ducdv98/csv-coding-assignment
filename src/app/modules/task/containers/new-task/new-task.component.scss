@@ -1,0 +1,23 @@
+.form-control {
+  @apply flex flex-col mt-3;
+
+  label {
+    @apply text-sm mb-1;
+  }
+
+  textarea {
+    @apply w-96 outline-none text-sm border border-gray-300 rounded-sm p-2;
+  }
+
+  .custom-assignee-select {
+    @apply border border-gray-300 p-2 rounded-sm;
+  }
+}
+
+.btn-submit {
+  @apply bg-primary text-white text-sm px-3 py-2 rounded-sm;
+
+  &:disabled {
+    @apply opacity-60 cursor-default;
+  }
+}
