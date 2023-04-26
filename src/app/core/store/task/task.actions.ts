@@ -32,7 +32,7 @@ export const getTaskError = createAction(
 
 export const updateTask = createAction(
   `${ACTION_PREFIX} Update task`,
-  props<{ partial: Task }>()
+  props<{ partial: Task, loadingRequired: boolean }>()
 );
 
 export const updateTaskSuccess = createAction(

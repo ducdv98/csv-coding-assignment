@@ -42,7 +42,7 @@ export class BoardColumnComponent implements OnChanges {
         columnId: parseInt(event.container.id, 10),
       };
 
-      this.store.dispatch(fromStore.updateTask({ partial }));
+      this.store.dispatch(fromStore.updateTask({ partial, loadingRequired: false }));
     }
   }
 

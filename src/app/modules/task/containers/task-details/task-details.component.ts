@@ -78,7 +78,7 @@ export class TaskDetailsComponent implements OnInit {
         description: this.taskDetailsForm.value.description,
         assigneeId: this.taskDetailsForm.value.assigneeId,
       };
-      this.store.dispatch(updateTask({ partial }));
+      this.store.dispatch(updateTask({ partial, loadingRequired: true }));
     }
   }
 }

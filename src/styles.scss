@@ -1,7 +1,4 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-@import "./assets/styles/font.scss";
-@import "./assets/styles/reset.scss";
-@import "./assets/styles/material.scss";
+@import "assets/styles/tailwind";
+@import "assets/styles/font";
+@import "assets/styles/reset";
+@import "assets/styles/material";

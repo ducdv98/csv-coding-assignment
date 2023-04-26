@@ -9,9 +9,7 @@
     <div class="board-column-header-name">
       <span>{{ column?.name }}</span>
       <span *ngIf="tasks$ | async as tasks">
-        {{
-          tasks.length > 1 ? tasks.length + " issues" : tasks.length + " issue"
-        }}
+        ({{tasks.length}})
       </span>
     </div>
   </div>

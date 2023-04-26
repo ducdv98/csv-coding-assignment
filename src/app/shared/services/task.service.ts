@@ -91,7 +91,7 @@ export class TaskService {
     },
   ];
 
-  lastId = 2;
+  lastId = this.storedTasks.length;
 
   private findTaskById = (id) =>
     this.storedTasks.find((task) => task.id === +id);

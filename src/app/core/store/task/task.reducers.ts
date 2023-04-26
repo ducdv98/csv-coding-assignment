@@ -55,7 +55,7 @@ const reducer = createReducer(
     error: error,
   })),
 
-  on(actions.updateTask, (state, { partial }) => {
+  on(actions.updateTask, (state, { partial, loadingRequired = true }) => {
     const task = { ...state.entities[partial.id] };
     return taskAdapter.updateOne(
       {
@@ -65,7 +65,7 @@ const reducer = createReducer(
           ...partial,
         },
       },
-      { ...state, loading: true }
+      { ...state, loading: loadingRequired }
     );
   }),
   on(actions.updateTaskSuccess, (state, { partial }) => ({
